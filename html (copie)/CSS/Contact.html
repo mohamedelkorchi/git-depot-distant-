@@ -5,23 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css/stylesjarditou.css">
 </head>
 <body>
     
-    <header> 
-        <img src="/home/mohamed/Documents/mohamed/jarditou_html_zip/images/jarditou_logo.jpg" alt="logo jarditou" width="215" height="90"><br>
-        <p>La qualité depuis 70 ans</p>
+     
+        <img src="images/jarditou_logo.jpg" alt="logo jarditou" width="215" height="90" id="logojarditou" >
+        <p id="titre">Tout le jardin</p>
         
-        <ul>
-            <li><a href="file:///home/mohamed/Documents/mohamed/html/jarditou.html" title="acceuil">Acceuil</a></li>
-            <li><a href="file:///home/mohamed/Documents/mohamed/html/Tableau.html#top" title="tableau">Tableau</a></li>
-            <li><a href="file:///home/mohamed/Documents/mohamed/html/Contact.html" title="contact">Contact</a></li>
-        </ul>
+        <nav>
+        <li>
+            <a href="index.html" title="acceuil">Acceuil</a>
+            <a href="Tableau.html" title="tableau">Tableau</a>
+            <a href="Contact.html" title="contact">Contact</a>
+        </li>
+        </nav>
         <br>
-        <img src="/home/mohamed/Documents/mohamed/jarditou_html_zip/images/promotion.jpg" alt="promotion" width="1830" height="200">
-        </header>
+        <img src="images/promotion.jpg" alt="promotion" width="100%" height="200">
+        
 
-
+        <div id="background">
+            <p class="colone">{COLONE DROITE}</p>
+        <div>
+         
         <form action="http://bienvu.net/script.php" method="get" id="formulaire">
 
             <p> * Ces zones sont obligatoires  </p>
@@ -56,44 +62,18 @@
             <br>
             <input type="checkbox" name="accepter" id="accepter"> * J'accepte le traitement informatique de ce formulaire 
             <br><br>
-            <input type="submit"> <input type="reset" value="Annuler">
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <input type="submit" value="Envoyer"> <input type="reset" value="Annuler">
+        </div>
+        </div>   
 
         <footer>
-            <ul>
-                <li> <a href="mention" title="mention légales">Mention légales</a></li>
-                <li> <a href="horaires" title="horaires">Horaires</a></li>
-                <li> <a href="plan" title="plan du site">Plan du site</a> </li>
-            </ul>
+            <nav id="mention">
+            <li>
+                 <a href="mention" title="mention légales">Mention légales</a>
+                 <a href="horaires" title="horaires">Horaires</a>
+                 <a href="plan" title="plan du site">Plan du site</a> 
+            </li>
+            </nav>
         </footer>
     
 </body>

@@ -1,0 +1,46 @@
+nav {
+background-color: black; width: 100%;
+padding: 20px 20px 20px 20px;
+margin: 0px; margin-top: 27px;
+width: auto;
+}
+
+#mention {
+
+    margin-top: 0px;
+}
+
+#titre {
+margin-left: 800px; font-size: 22pt;
+ margin-bottom: 10px;
+ padding-top: 30px;
+    
+}
+
+a {
+
+    color: white;
+}
+
+#logojarditou {
+height: 90px; width: 300px;
+float: left;
+}
+
+.colone {
+background-color: rgb(212, 209, 209);
+float: right;
+width: 700px;
+height: auto;
+margin-top: 0px; margin-bottom: 3px;
+}
+
+#background {
+display: flex;
+flex-direction: row-reverse;
+/*justify-content: flex-end;*/
+justify-content: space-between;
+
+}
+
+
