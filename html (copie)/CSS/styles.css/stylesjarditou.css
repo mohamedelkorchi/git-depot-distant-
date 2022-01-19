@@ -81,11 +81,12 @@ justify-content: space-between;
                 
             }
  
-    /* .texte {
-        display: flex;
-        align-content: flex-end;
-        flex-direction: row-reverse;  */
-    
+    h4 {
+        font-size: 11pt;
+    }
+
+    p {
+        font-size: 10pt;
     }
 
 
