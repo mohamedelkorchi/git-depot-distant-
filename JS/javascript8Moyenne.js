@@ -1,0 +1,86 @@
+var btn8 = document.getElementById ("btn8");
+btn8.addEventListener ("click", clickbtn8);
+function clickbtn8 ()
+{
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////// METHODE LEA //////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+    // var reponse1=""
+    // var N=0
+    
+    // var n=0
+    // while(reponse1!="0")
+    // {
+    //     reponse1=prompt("Saisissez un nombre entier") 
+    //     console.log(reponse1)
+    //     N=N+parseFloat(reponse1)
+    //     n++
+    //     console.log(N)
+    //     console.log(n)
+    // }
+    // resultat=N/n
+    // alert("La somme est de " + N + "\nLa moyenne est de " + resultat);
+    
+
+
+
+
+    
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////// METHODE JULIETTE //////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////
+// explication //
+/////////////////
+
+var a = "";
+    var somme = 0;
+    var n = 0;
+
+    while(a!="0")
+    {
+        a = prompt("Ecrire un chiffre entier : ");
+        var somme = somme + parseFloat(a);
+        var n = n + 1;
+    }
+        var n = n - 1;
+        var moyenne = somme/n ;
+        alert("La somme des nombres est de : "+somme+"\n"+
+            "La moyenne est de : "+moyenne);
+            
+           // console.log(a);
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
