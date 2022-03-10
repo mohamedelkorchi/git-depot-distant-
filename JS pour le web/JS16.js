@@ -29,7 +29,7 @@ console.log(messageErreur);
     if(societe.value == "")
     {
         messageErreur = messageErreur +  "Saisissez le nom de votre société.";
-        // event.preventDefault();
+        // event.preventDefault() ;
     }
     else if (testsociete != true)
     {
