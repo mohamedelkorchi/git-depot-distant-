@@ -7,7 +7,7 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
     if (nom.value == "")
     {
         erreurNom.textContent = "Veuillez renseigner un nom.";
-        erreurNom.style.color = "red"; // comment avoir la palette de couleurs ?
+        erreurNom.style.color = "#B2051F"; // comment avoir la palette de couleurs ?
         e.preventDefault();
     }
     else if (testNom != true)
@@ -29,7 +29,7 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
     if (prenom.value =="")
     {
         erreurPrenom.textContent = "Veuillez renseigner un prénom. "
-        erreurPrenom.style.color = "red";
+        erreurPrenom.style.color = "#B2051F";
         e.preventDefault();
     }
     else if (testPrenom != true)
@@ -52,7 +52,7 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
     if (sexes != true)
     {
         erreurSexe.textContent = "Indiquez votre sexe."
-        erreurSexe.style.color = "red";
+        erreurSexe.style.color = "#B2051F";
         e.preventDefault();
     }
     else
@@ -65,7 +65,7 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
     if (ddn.value == "")
     {
         erreurDdn.textContent = "Indiquez votre date de naissance."
-        erreurDdn.style.color = "red";
+        erreurDdn.style.color = "#B2051F";
         e.preventDefault();
     }
     else
@@ -82,7 +82,7 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
     if (cp.value == "")
     {
         erreurCp.textContent = "Champ obligatoire.";
-        erreurCp.style.color = "red";
+        erreurCp.style.color = "#B2051F";
         e.preventDefault();
     }
     else if (testCp != true)
@@ -105,7 +105,7 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
     if (email.value == "")
     {
         erreurMail.textContent = "Renseignez un Email.";
-        erreurMail.style.color = "red";
+        erreurMail.style.color = "#B2051F";
         e.preventDefault();
     }
     else if (testmail != true)
@@ -125,7 +125,7 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
     if (sujet.value == "selectionner")
     {
         erreurSujet.textContent = "Veuillez selectionner un sujet.";
-        erreurSujet.style.color = "red";
+        erreurSujet.style.color = "#B2051F";
         e.preventDefault();
     }    
     else
@@ -135,21 +135,21 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
 
 
 
-    // questionFiltre = new RegExp ("^[a-zA-Z ]+$");
-    // testQuestion = questionFiltre.test(question.value);
+    questionFiltre = new RegExp ("^[\\S ]{20,}$"); // 2 anti slash 
+    testQuestion = questionFiltre.test(question.value);
 
     if (question.value == "")
     {
-        erreurQuestion.textContent = /*"20 caracteres min"*/ "Veuillez inserer votre demande svp.";
+        erreurQuestion.textContent = "Veuillez inserer votre demande svp.";
+        erreurQuestion.style.color = "#B2051F";
+        e.preventDefault();
+    }
+    else if (testQuestion != true)
+    {
+        erreurQuestion.textContent = "20 caractères minimum.";
         erreurQuestion.style.color = "red";
         e.preventDefault();
     }
-    // else if (testQuestion != true)
-    // {
-    //     erreurQuestion.textContent = "20 caractères minimum.";
-    //     erreurQuestion.style.color = "red";
-    //     e.preventDefault();
-    // }
     else
     {
         erreurQuestion.textContent ="";
@@ -161,7 +161,7 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
     if (accepterFormulaire == "")
     {
         erreurAccepter.textContent = "Veuillez accepter pour envoyer le formulaire.";
-        erreurAccepter.style.color = "red";
+        erreurAccepter.style.color = "#B2051F";
         e.preventDefault();
     }
     else
