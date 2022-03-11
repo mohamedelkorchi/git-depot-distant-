@@ -169,6 +169,15 @@ formulaire.addEventListener("submit", function(e) // ca fonctione sans initialis
         erreurAccepter.textContent = "";
     }
 
+    if (erreurAccepter.textContent+erreurCp.textContent+erreurDdn.textContent+erreurMail.textContent+erreurNom.textContent+erreurPrenom.textContent+erreurQuestion.textContent+erreurSexe.textContent+erreurSujet.textContent == "")
+    {
+        alert("Envoi du formulaire imminent ... ")
+    };
+    // if (nom.value&&prenom.value&&ddn.value&&cp.value&&question.value&&email.value&&sujet.value&&)
+    // {
+    //     alert("Formulaire envoyé :-) ")
+    // }
+
 })
 
 
