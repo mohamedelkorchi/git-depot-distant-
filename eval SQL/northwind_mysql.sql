@@ -3375,10 +3375,90 @@ from customers
 join orders on customers.CustomerID = orders.CustomerID 
 where country = "france"
 group by companyname
-having c > 10
+having c > 10;
 
 
 /*5- Liste des clients dont le montant cumulé de toutes les commandes passées > 30000€*/
+
+select companyname, sum(unitprice * quantity) ca, customers.Country  
+from customers 
+join orders on customers.CustomerID = orders.CustomerID 
+join `order details` as od on orders.OrderID = od.OrderID 
+group by customers.Country, companyname
+having ca > 30000 
+order by ca desc;  
+
+
+/*6- Liste des pays dans lesquels des produits fournis par "Exotic Liquids*/
+
+select customers.Country 
+from suppliers 
+join products on suppliers.SupplierID = products.SupplierID 
+join `order details` od on products.ProductID = od.ProductID 
+join orders on od.OrderID = orders.OrderID 
+join customers on customers.CustomerID = orders.CustomerID 
+where suppliers.CompanyName = "exotic liquids"
+group by country
+
+
+/*7- Chiffre d'affaires global sur les ventes de 1997*/
+
+select sum(UnitPrice*Quantity) "ventes 1997"
+from orders 
+join `order details` od on orders.OrderID = od.OrderID 
+where OrderDate  like "1997-%-%"
+group by "ventes 1997"
+
+/*select * 
+from orders*/ 
+
+
+/*8- Chiffre d'affaires détaillé par mois, sur les ventes de 1997*/
+
+SELECT month(OrderDate) AS Mois_1997, SUM(UnitPrice*Quantity) AS Montan_Ventes
+FROM `order details` od
+JOIN orders ON orders.OrderID = od.OrderID
+WHERE YEAR(OrderDate) = 1997
+GROUP BY Mois_1997;
+
+/*select orderdate  
+from orders 
+join `order details` od on orders.OrderID  = od.OrderID 
+where orderdate like "1997-%-%"
+
+
+select *
+from orders 
+join `order details` od on orders.OrderID  = od.OrderID 
+where orderdate like "1997-%-%"
+
+/*
+SELECT MONTH(orders.OrderDate) AS "Mois 97", sum(order_details.UnitPrice) * sum(order_details.Quantity) / COUNT(order_details.OrderID) AS "Montant Ventes 97"
+FROM products JOIN order_details ON products.ProductID = order_details.ProductID JOIN orders ON order_details.OrderID = orders.OrderID
+WHERE orders.OrderDate like "1997-%-%"
+GROUP BY MONTH(orders.OrderDate);*/
+
+
+/*9- A quand remonte la dernière commande du client nommé "Du monde entier" ?*/
+
+select OrderDate "dernière commande", ShipName 
+from orders 
+where ShipName = "du monde entier"
+order by orderdate desc 
+limit 1;
+
+
+/*10- Quel est le délai moyen de livraison en jours ?*/
+
+select OrderDate, RequiredDate, ShippedDate
+from orders 
+
+select round (avg(datediff(ShippedDate,OrderDate))) "délai moyen de livraison"
+from orders;
+
+
+
+
 
 
 
