@@ -252,8 +252,7 @@ from entcom;
 select numfou
 from vente
 group by numfou;
-
-
+ 
 /*13*/
 select numfou, numcom, datcom
 from entcom
@@ -263,6 +262,34 @@ where numfou  in  (select numfou
 )	;
 	
 
+select distinct fournis.nomfou
+from fournis 
+join vente on fournis.numfou = vente.numfou 
+join produit on vente.codart = produit.codart 
+join ligcom on produit.codart = ligcom.codart
+where qtecde > qteliv and stkphy > 0 /*(qtecde - qteliv)*/
+
+
+select distinct nomfou
+from fournis 
+where numfou in (
+	select numfou
+	from vente 
+	where codart in (
+		select distinct codart
+		from ligcom
+		where qtecde > qteliv)
+	)
+)
+
+
+select *
+from entcom
+where numfou IN (
+	select numfou
+	from entcom
+	where numcom = 70210
+)
 
 
 
@@ -275,8 +302,21 @@ where numfou  in  (select numfou
 
 
 
+use empdep;
+select emp_nom, emp_salaire
+from employes
+where emp_salaire <
+(
+	select avg(emp_salaire) as moyenne
+	from employes
+);
 
 
 
-
+select emp_nom, emp_salaire, (basemoyenne.moyenne - emp_salaire) as ecart
+from employes, (
+	select avg(emp_salaire) as moyenne
+	from employes
+) as basemoyenne
+where emp_salaire < basemoyenne.moyenne;
 
